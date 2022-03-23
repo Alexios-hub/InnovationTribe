@@ -1,0 +1,41 @@
+{
+  "name": "testfinal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "docker": "docker build . -t vue-app && docker run -d -p 3000:80 vue-app",
+    "docker-build-dev": "docker build --build-arg ENV=dev . -t testfinal-dev",
+    "docker-build-pro": "docker build --build-arg ENV=pro . -t testfinal-pro",
+    "docker-build-qa": "docker build --build-arg ENV=qa . -t testfinal-qa",
+    "docker-run-dev": "npm run docker-build-dev && docker run -d -p 3000:80 testfinal-dev",
+    "docker-run-pro": "npm run docker-build-pro && docker run -d -p 3000:80 testfinal-pro",
+    "docker-run-qa": "npm run docker-build-qa && docker run -d -p 3000:80 testfinal-qa"
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.2.4",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.4.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "axios": "^0.18.0",
+    "vue-cli-plugin-ant-design": "^1.0.1",
+    "vue-cli-plugin-axios": "0.0.4",
+    "vue-cli-plugin-docker-nginx": "^1.0.1",
+    "vue-cli-plugin-docker-nginx-diff-proxy": "^1.1.7",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-cli-plugin-element-ui": "^1.1.4",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
